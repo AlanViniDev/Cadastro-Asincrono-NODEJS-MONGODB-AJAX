@@ -14,10 +14,8 @@ const port = 8000;
 
 MongoClient.connect(url, function (err, db) {
   console.log('MongoDB Conectado!');
- 
   var app = express();
-    
-  // db.close()
+  db.close()
 });
 
 app.use(bodyParser.json());
@@ -27,17 +25,7 @@ app.listen(8000, () => {
     console.log('Servidor Iniciado na Porta ' + port);
 });
 
-/*
-(function readyJS(win,doc){
-  'use strict';
-  let ajax = new XMLHttpRequest();
-  ajax.open('GET','http://localhost:8000');
-  ajax.onreadystatechange = function () {
-  console.log(ajax.responseText);
-}
-ajax.send();
-})();
-*/
+
 
 
 
